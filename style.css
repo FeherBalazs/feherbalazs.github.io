@@ -129,13 +129,33 @@ body {
   padding: 0;
 }
 
-.story-card__link {
-  display: block;
+.story-card {
   padding: 1.6rem 0;
   border-bottom: 1px solid var(--rule);
+}
+
+.story-card__link {
+  display: block;
   text-decoration: none;
   color: inherit;
 }
+
+/* "Also in Magyar" — sits outside the card link, so it stays its own target */
+.story-card__langs {
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin: 0.85rem 0 0;
+}
+
+.story-card__langs a {
+  color: var(--accent-deep);
+  text-decoration: none;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1px;
+}
+
+.story-card__langs a:hover { border-bottom-color: var(--accent); }
 
 .story-card__link:hover .story-card__title { color: var(--accent-deep); }
 
@@ -193,6 +213,41 @@ body {
   font-size: 0.85rem;
   color: var(--muted);
   margin: 0;
+}
+
+/* language switch under the article meta */
+.lang-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  align-items: baseline;
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  margin: 0.9rem 0 0;
+}
+
+.lang-switch a,
+.lang-switch__current {
+  display: inline-block;
+  padding: 0.18em 0.6em;
+  border: 1px solid var(--rule);
+  border-radius: 100px;
+  text-decoration: none;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+
+.lang-switch a {
+  color: var(--accent-deep);
+}
+
+.lang-switch a:hover {
+  border-color: var(--accent);
+}
+
+.lang-switch__current {
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.5);
+  cursor: default;
 }
 
 .article-rule {
